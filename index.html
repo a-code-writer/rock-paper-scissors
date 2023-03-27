@@ -10,9 +10,63 @@
     <script>
         let choices = ['rock', 'paper', 'scissors'];
         function getComputerChoice(){
-            return choices[Math.floor(Math.random() * choices.length)];
+            let computerChoice = choices[Math.floor(Math.random() * choices.length)];
+            return computerChoice;
         }
-        
+
+        const playerSelection = "Rock"
+
+        function playGame(playerSelection, computerSelection){
+
+           computerSelection = getComputerChoice(); //sets parameter to randomly picked choice
+           playerSelection = prompt("rock, paper, or scissors?"); //gets input from user
+           let playerChoice = playerSelection.toLowerCase(); //sets input to lowercase
+
+           if (playerChoice === 'rock' && computerSelection === 'rock'){
+            console.log("Tie, try again");
+            return "Tie, try again";
+           } else if (playerChoice === 'scissors' && computerSelection === 'rock'){
+            console.log("You lose, rock beats scissors");
+            return "You lose, rock beats scissors";
+           } else if (playerChoice === 'paper' && computerSelection === 'rock'){
+            console.log("you win, paper beats rock");
+            return "you win, paper beats rock";
+           } else if (playerChoice === 'rock' && computerSelection === 'scissors'){
+            console.log("You win, rock beats scissors");
+            return "You win, rock beats scissors";
+           } else if (playerChoice === 'scissors' && computerSelection === 'scissors'){
+            console.log("Tie, try again");
+            return "Tie, try again";
+           } else if (playerChoice === 'paper' && computerSelection === 'scissors'){
+            console.log("You lose, scissors beats paper");
+            return "You lose, scissors beats paper";
+           } else if (playerChoice === 'rock' && computerSelection === 'paper'){
+            console.log("You lose, paper beats rock");
+            return "You lose, paper beats rock";
+           } else if (playerChoice === 'scissors' && computerSelection === 'paper'){
+            console.log("You win, scissors beats paper");
+            return "You win, scissors beats paper";
+           } else if (playerChoice === 'paper' && computerSelection === 'paper'){
+            console.log("Tie, try again");
+            return "Tie, try again";
+           }
+
+        }
+
+        function test(){
+            if (playGame() === "You lose, paper beats rock"){
+            console.log("LOSER");
+        } else {
+            console.log("WINNER");
+        }
+        }
+
+        function game(){
+            for (let i = 0; i < 5; i++){
+                playGame();
+            }
+
+        }
     </script>
 </body>
 </html>
