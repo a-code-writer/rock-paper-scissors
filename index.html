@@ -7,66 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        let playerWins = 0;
-        let playerLosses = 0;
-        let ties = 0;
-        let choices = ['rock', 'paper', 'scissors'];
-        function getComputerChoice(){
-            let computerChoice = choices[Math.floor(Math.random() * choices.length)];
-            return computerChoice;
-        }
-
-        const playerSelection = "Rock"
-
-        function playGame(playerSelection, computerSelection){
-
-           computerSelection = getComputerChoice(); //sets parameter to randomly picked choice
-           playerSelection = prompt("rock, paper, or scissors?"); //gets input from user
-           let playerChoice = playerSelection.toLowerCase(); //sets input to lowercase
-
-           if (playerChoice === 'rock' && computerSelection === 'rock'){
-            ties = ties++;
-            return "Tie, try again";
-           } else if (playerChoice === 'scissors' && computerSelection === 'rock'){
-            playerLosses = playerLosses++;
-            return "You lose, rock beats scissors";
-           } else if (playerChoice === 'paper' && computerSelection === 'rock'){
-            playerWins = playerWins++;
-            return "you win, paper beats rock";
-           } else if (playerChoice === 'rock' && computerSelection === 'scissors'){
-            playerWins = playerWins++;
-            return "You win, rock beats scissors";
-           } else if (playerChoice === 'scissors' && computerSelection === 'scissors'){
-            ties = ties++;
-            return "Tie, try again";
-           } else if (playerChoice === 'paper' && computerSelection === 'scissors'){
-            playerLosses = playerLosses++;
-            return "You lose, scissors beats paper";
-           } else if (playerChoice === 'rock' && computerSelection === 'paper'){
-            playerLosses = playerLosses++;
-            return "You lose, paper beats rock";
-           } else if (playerChoice === 'scissors' && computerSelection === 'paper'){
-            playerWins = playerWins++;
-            return "You win, scissors beats paper";
-           } else if (playerChoice === 'paper' && computerSelection === 'paper'){
-            ties = ties++;
-            return "Tie, try again";
-           }
-        }
-
-        function game(){
-            for (let i = 0; i < 5; i++){
-                playGame();
-            }
-            if(playerLosses > 2){
-                return "Loser"
-            } else if (playerWins > 2){
-                return "Winner"
-            } else {
-                return "Tie game"
-            }
-        }
-    </script>
+    <h1>Rock Paper Scissors</h1>
+    <script src="rps-js.js"> </script>
 </body>
 </html>
